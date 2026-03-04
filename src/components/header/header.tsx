@@ -1,12 +1,8 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { useRouter } from "next/router";
-import { cn } from "@/lib/utils";
 import ActiveLink from "../active-link/active-link";
 
 export const Header = () => {
-  const router = useRouter();
-
   return (
     <header
       className="fixed top-0 z-50 w-full border-b border-white/10 bg-background/95 backdrop-blur 
