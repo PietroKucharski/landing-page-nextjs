@@ -1,3 +1,4 @@
+import { CallToAction } from "@/components/call-to-action/call-to-action";
 import { CustomerStorySection } from "@/components/customer-story-section/customer-story-section";
 import { FeatureSection } from "@/components/feature-section/feature-section";
 import { HeroSection } from "@/components/hero-section/hero-section";
@@ -8,9 +9,10 @@ export default function Home() {
     <>
       <article className="flex flex-col">
         <HeroSection />
-        <FeatureSection/>
-        <SupportSection/>
-        <CustomerStorySection/>
+        <FeatureSection />
+        <SupportSection />
+        <CustomerStorySection />
+        <CallToAction />
       </article>
     </>
   );
