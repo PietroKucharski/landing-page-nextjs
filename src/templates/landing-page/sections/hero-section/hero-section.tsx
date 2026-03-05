@@ -1,7 +1,7 @@
-import { ArrowRight, Clock, Store } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '../ui/button';
+import { ArrowRight, Clock, Store } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "../../../../components/ui/button";
 
 export const HeroSection = () => {
   return (
@@ -16,14 +16,14 @@ export const HeroSection = () => {
             <div>
               <div className="flex items-center gap-2">
                 <Clock className="text-cyan-100 h-4 w-4" />
-                <span className="text-gray-200">
+                <span className="text-body-md text-gray-200">
                   Crie o seu site em menos de 5 minutos
                 </span>
               </div>
 
               <div className="flex items-center gap-2">
                 <Store className="text-cyan-100 h-4 w-4" />
-                <span className="text-gray-200">
+                <span className="text-body-md text-gray-200">
                   Acompanhe e otimize seu negócio online
                 </span>
               </div>
@@ -44,7 +44,7 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        <div className="relative h-80 hidden md:h-full order-first md:order-last items-center justify-center md:flex lg:flex">
+        <div className="relative h-[20rem] hidden md:h-full order-first md:order-last items-center justify-center md:flex lg:flex">
           <Image
             src="/hero-section.png"
             alt="Ilustração com ícones de store, tag e sacola"
