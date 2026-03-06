@@ -8,6 +8,7 @@ export function BlogList() {
   const pageTitle = query
     ? `Resultado de buscas para "${query}"`
     : "Dicas e estratégias para impulsionar o seu negócio";
+
   return (
     <div className="flex flex-col py-24 grow h-full">
       <header className="">
@@ -24,7 +25,17 @@ export function BlogList() {
         </div>
       </header>
 
-      <PostCard/>
+      <PostCard
+        slug="/transformando"
+        title="Transformando seu negócio em uma loja virtual"
+        description="Se você está buscando uma maneira simples e eficaz de vender seus produtos online..."
+        date="20/12/2024"
+        image="/assets/first-post.png"
+        author={{
+          name: "Aspen Dokidis",
+          avatar: "/customer-01.png",
+        }}
+      />
     </div>
   );
 }
