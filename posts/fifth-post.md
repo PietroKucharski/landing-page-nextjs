@@ -1,14 +1,14 @@
 ---
-title: Transformando seu negócio em uma loja virtual
-description: Se você está buscando uma maneira simples e eficaz de vender seus produtos online, o Site.Set é a solução perfeita para você
-image: /assets/first-post.png
-date: 2024-12-20 10:20:00
+title: As vantagens de ter uma loja online
+description: Com a evolução digital, mais consumidores preferem fazer compras pela internet, o que torna
+image: /assets/fifth-post.png
+date: 2024-10-02 10:20:00
 author:
-  name: Aspen Dokidis
-  avatar: /customer-06.png
+  name: Cristofer Carder
+  avatar: /customer-04.png
 ---
 
-Se você está buscando uma maneira simples e eficaz de vender seus produtos online, o Site.Set é a solução perfeita para você. Criar uma loja virtual de sucesso nunca foi tão fácil. Com nossa plataforma intuitiva, você pode criar um site profissional para sua loja em minutos, sem precisar de conhecimentos técnicos.
+Com a evolução digital, mais consumidores preferem fazer compras pela internet, o que torna fundamental para qualquer empreendedor ter uma presença online. Neste post, vamos explorar as principais vantagens de ter uma loja virtual e como ela pode impulsionar o seu sucesso no mercado.
 
 Veja o que nossa plataforma oferece:
 

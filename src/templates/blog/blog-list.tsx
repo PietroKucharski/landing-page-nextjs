@@ -1,17 +1,20 @@
 import { Search } from "@/components/search/search";
 import { useRouter } from "next/router";
 import { PostCard } from "./components/post-card/post-card";
+import { PostGridCard } from "./components/post-grid-card/post-grid-card";
+import { allPosts } from "contentlayer/generated";
 
 export function BlogList() {
   const router = useRouter();
   const query = router.query.q as string;
+  const posts = allPosts;
   const pageTitle = query
     ? `Resultado de buscas para "${query}"`
     : "Dicas e estratégias para impulsionar o seu negócio";
 
   return (
     <div className="flex flex-col py-24 grow h-full">
-      <header className="">
+      <header className="pb-14">
         <div className="container space-y-6 flex flex-col items-start justify-between md:flex-row md:items-end lg:items-end">
           <div className="flex flex-col gap-4 md:px-0">
             <span className="text-body-tag text-cyan-100 w-fit rounded-md text-center md:text-left py-2 px-4 bg-cyan-300">
@@ -25,17 +28,22 @@ export function BlogList() {
         </div>
       </header>
 
-      <PostCard
-        slug="/transformando"
-        title="Transformando seu negócio em uma loja virtual"
-        description="Se você está buscando uma maneira simples e eficaz de vender seus produtos online..."
-        date="20/12/2024"
-        image="/assets/first-post.png"
-        author={{
-          name: "Aspen Dokidis",
-          avatar: "/customer-01.png",
-        }}
-      />
+      <PostGridCard>
+        {posts.map((post) => (
+          <PostCard
+            key={post._id}
+            slug={post.slug}
+            title={post.title}
+            description={post.description}
+            date={new Date(post.date).toLocaleDateString('pt-BR')}
+            image={post.image}
+            author={{
+              name: post.author.name,
+              avatar: post.author.avatar,
+            }}
+          />
+        ))}
+      </PostGridCard>
     </div>
   );
 }
