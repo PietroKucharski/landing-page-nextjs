@@ -8,6 +8,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
+import { useShare } from "@/hooks/use-share";
 import { allPosts } from "contentlayer/generated";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,8 +20,14 @@ export default function PostPage() {
   const post = allPosts.find(
     (post) => post.slug.toLocaleLowerCase() === slug.toLocaleLowerCase(),
   )!;
-
   const publishedDate = new Date(post?.date).toLocaleDateString("pt-BR");
+  const postUrl = `https://site.set/blog/${slug}`;
+
+  const { shareButtons } = useShare({
+    url: postUrl,
+    title: post.title,
+    text: post.description,
+  });
 
   return (
     <main className="mt-32">
@@ -86,9 +93,15 @@ export default function PostPage() {
               </h2>
 
               <div className="space-y-3">
-                {[{ key: 1, providerName: "teste" }].map((provider) => (
-                  <Button key={provider.key} variant="outline">
-                    {provider.providerName}
+                {shareButtons.map((provider) => (
+                  <Button
+                    key={provider.provider}
+                    onClick={() => provider.action}
+                    variant="outline"
+                    className="w-full justify-start gap-2"
+                  >
+                    {provider.icon}
+                    {provider.name}
                   </Button>
                 ))}
               </div>
