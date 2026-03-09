@@ -6,6 +6,8 @@ type BlogPostPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+export const revalidate = 60;
+
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
     slug: post.slug,
