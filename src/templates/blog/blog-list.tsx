@@ -1,17 +1,19 @@
+"use client";
+
 import { Search } from "@/components/search/search";
-import { useRouter } from "next/router";
 import { PostCard } from "./components/post-card/post-card";
 import { PostGridCard } from "./components/post-grid-card/post-grid-card";
 import { type Post } from "contentlayer/generated";
 import { Inbox } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
 export type BlogListProps = {
   posts: Post[];
 };
 
 export function BlogList({ posts }: BlogListProps) {
-  const router = useRouter();
-  const query = router.query.q as string;
+  const searchParams = useSearchParams();
+  const query = searchParams?.get("q") ?? "";
   const pageTitle = query
     ? `Resultado de buscas para "${query}"`
     : "Dicas e estratégias para impulsionar o seu negócio";
@@ -19,7 +21,7 @@ export function BlogList({ posts }: BlogListProps) {
     ? posts.filter((post) =>
         post.title.toLocaleLowerCase()?.includes(query?.toLocaleLowerCase()),
       )
-    : posts ;
+    : posts;
   const hasPosts = postList.length > 0;
 
   return (
