@@ -1,9 +1,9 @@
 import { BlogList, type BlogListProps } from "@/templates/blog";
 import { allPosts } from "contentlayer/generated";
-import type { GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 
-export default function BlogPage({posts}: BlogListProps) {
-  return <BlogList posts={posts}/>;
+export default function BlogPage({ posts }: BlogListProps) {
+  return <BlogList posts={posts} />;
 }
 
 export const getStaticProps = (async () => {
@@ -13,7 +13,7 @@ export const getStaticProps = (async () => {
 
   return {
     props: {
-      posts: sortedPosts
+      posts: sortedPosts,
     },
   };
 }) satisfies GetStaticProps<BlogListProps>;
