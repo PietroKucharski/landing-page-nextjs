@@ -1,5 +1,5 @@
+import { Layout } from '@/components/layout/layout';
 import '@/styles/globals.css';
-import { Layout } from 'lucide-react';
 
 export const metadata = {
   title: 'Next.js',
