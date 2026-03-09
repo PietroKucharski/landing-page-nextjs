@@ -45,7 +45,7 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        <div className="relative h-[20rem] hidden md:h-full order-first md:order-last items-center justify-center md:flex lg:flex">
+        <div className="relative h-80 hidden md:h-full order-first md:order-last items-center justify-center md:flex lg:flex">
           <Image
             src="/hero-section.png"
             alt="Ilustração com ícones de store, tag e sacola"
